@@ -1,0 +1,7 @@
+.Aside {}
+
+.aside {
+    width: 300px;
+    justify-content: right;
+    color: lime;
+}

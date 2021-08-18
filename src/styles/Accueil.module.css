@@ -1,0 +1,7 @@
+.Accueil {}
+.contenu{
+    display: flex;
+}
+.contenuDetail{
+    width: 70%;
+}
