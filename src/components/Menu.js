@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import styles from '../styles/Menu.module.css';
+
 import List from "./List";
 import Accueil from "./Accueil";
 import Contact from "./Contact";

@@ -1,0 +1,22 @@
+{
+  "artistes":[
+    {
+      "id": 1,
+      "name": "eminem",
+      "countrie" : "USA",
+      "style": "rap"
+    },
+    {
+      "id": 2,
+      "name": "Stromaë",
+      "countrie" : "BELGIUM",
+      "style": "rap"
+    },
+    {
+      "id": 2,
+      "name": "Johny",
+      "countrie" : "FRANCE",
+      "style": "rock"
+    }
+  ]
+}

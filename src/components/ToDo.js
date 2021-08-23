@@ -1,30 +1,39 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from '../styles/ToDo.module.css';
+import Aliment from "./Aliment";
+import AlimentForm from "./AlimentForm";
 
-const aliments=[
-    "Lait",
-    "Oeuf",
-    "Farine",
-    "Levure"
-]
+class ToDo extends React.Component{
+    state = {
+        aliments :[
+            {id: 1, nom:"Lait"},
+            {id: 2, nom:"Oeuf"},
+            {id: 3, nom:"Farine"},
+            {id: 4, nom:"Levure"}
+        ],
+    };
+    handleDelete = id => {
+        const aliments = [...this.state.aliments];
+        const index = aliments.findIndex(aliment => aliment.id === id);
+        aliments.splice(index, 1)
+        this.setState({aliments})
+    };
+    handleAdd = aliment =>{
+        const aliments = [...this.state.aliments];
+        aliments.push(aliment);
 
-function ToDo() {
-    return<div className={styles.ToDo}>
-    <h1>TODO</h1>
-      <ul className={"list-group"}>
-          {aliments.map((aliment,index) =>(
-              <li className={"list-group-item d-flex justify-content-between align-items-center"} key={`${aliment}-${index}`}>{aliment}<button type={"button"} className={"btn btn-primary m-2"}>X</button></li>
-          ))}
-      </ul>
-      <form>
-          <div className={"form-group"}>
-              <input className={"form-control"} type={"text"} placeholder={"Ajouter un aliment"}/>
-              <button type={"button"} className={"btn btn-success m-2"}>Ajouter</button>
-          </div>
-      </form>
-  </div>
+        this.setState({aliments})
+    }
+    render() {
+        return<div className={styles.ToDo}>
+            <h1>TODO</h1>
+            <ul className={"list-group"}>
+                {this.state.aliments.map(aliment =>(
+                    <Aliment details={aliment} onDelete={this.handleDelete}/>
+                ))}
+            </ul>
+            <AlimentForm onClientAdd={this.handleAdd}/>
+        </div>
+    }
 }
-
-
 export default ToDo;

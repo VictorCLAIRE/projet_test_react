@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import styles from '../styles/Contact.module.css';
 import Aside from "./Aside";
 
@@ -13,8 +13,5 @@ const Contact = () => (
 
 );
 
-Contact.propTypes = {};
-
-Contact.defaultProps = {};
 
 export default Contact;
